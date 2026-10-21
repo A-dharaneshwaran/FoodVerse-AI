@@ -13,7 +13,6 @@ export function Header({ currentTitle, onToggleMobile, onRefreshStatus, isRefres
           <Menu size={18} />
         </button>
         <h1 className="header-title">{currentTitle}</h1>
-        <span className="phase-pill">v1.0 Production</span>
       </div>
 
       <div className="header-right">

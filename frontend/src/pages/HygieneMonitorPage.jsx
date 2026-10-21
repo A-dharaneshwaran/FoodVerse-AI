@@ -262,18 +262,20 @@ export function HygieneMonitorPage() {
                   fileInputRef.current?.click();
                 }
               }}
+              style={{ cursor: 'pointer' }}
               aria-label="Upload kitchen or prep area photo for hygiene inspection"
             >
-              <div className="viewfinder-glass-overlay">
-                <UploadCloud size={44} className="viewfinder-icon" />
-                <span className="viewfinder-title">Drop kitchen station photo here</span>
-                <span className="viewfinder-subtext">or click to browse from device</span>
-                <div className="viewfinder-meta-specs">
-                  <span>JPEG, PNG, WEBP</span>
-                  <span>•</span>
-                  <span>UP TO {MAX_FILE_SIZE_MB}MB</span>
-                </div>
+              <div className="viewfinder-crosshair" />
+              <div className="viewfinder-center-info">
+                <UploadCloud size={32} style={{ color: 'var(--c-terracotta)', opacity: 0.85 }} />
+                <h4 style={{ fontSize: '1rem', fontWeight: 600, color: 'var(--c-espresso)' }}>
+                  Drag & Drop Kitchen Station Photo
+                </h4>
+                <p style={{ fontSize: '0.8rem', color: 'var(--c-brown-grey)' }}>
+                  or click to select photo. JPEG, PNG, or WebP up to {MAX_FILE_SIZE_MB} MB.
+                </p>
               </div>
+              <div className="viewfinder-corner-label">STATION SANITATION • VISUAL AUDIT</div>
             </div>
           ) : (
             <div className="preview-container">
@@ -308,15 +310,13 @@ export function HygieneMonitorPage() {
             <button
               type="button"
               id="analyze-hygiene-btn"
-              className="btn-spotlight-primary"
+              className="btn-primary"
               disabled={!selectedFile || isAnalyzing}
               onClick={handleAnalyze}
               style={{
                 width: '100%',
                 justifyContent: 'center',
-                padding: '12px 20px',
-                opacity: !selectedFile || isAnalyzing ? 0.6 : 1,
-                cursor: !selectedFile || isAnalyzing ? 'not-allowed' : 'pointer'
+                padding: '11px 20px'
               }}
             >
               {isAnalyzing ? (
@@ -387,19 +387,20 @@ export function HygieneMonitorPage() {
               flexDirection: 'column',
               alignItems: 'center',
               justifyContent: 'center',
-              padding: '60px 24px',
-              backgroundColor: 'var(--bg-surface)',
-              border: '1px solid var(--border-subtle)',
-              borderRadius: '12px',
+              padding: '44px 24px',
+              backgroundColor: '#ffffff',
+              border: '1px solid var(--c-border-warm)',
+              borderRadius: '8px',
               textAlign: 'center',
-              color: 'var(--text-muted)'
+              color: 'var(--c-brown-grey)',
+              boxShadow: 'var(--shadow-subtle)'
             }}>
-              <Camera size={40} style={{ marginBottom: '14px', strokeWidth: 1.5, opacity: 0.5 }} />
-              <h4 style={{ fontSize: '0.98rem', color: 'var(--text-ivory)', marginBottom: '6px' }}>
-                No Inspection Conducted Yet
+              <Camera size={36} style={{ marginBottom: '12px', strokeWidth: 1.5, color: 'var(--c-terracotta)', opacity: 0.85 }} />
+              <h4 style={{ fontSize: '1.05rem', fontFamily: 'var(--font-serif)', color: 'var(--c-espresso)', marginBottom: '6px' }}>
+                Inspection Station Ready
               </h4>
-              <p style={{ fontSize: '0.82rem', color: 'var(--text-secondary)', maxWidth: '360px', lineHeight: 1.5 }}>
-                Upload a photograph of a food preparation counter, cutting station, or dining area to begin automated visual audit.
+              <p style={{ fontSize: '0.82rem', color: 'var(--c-brown-grey)', maxWidth: '340px', lineHeight: 1.5 }}>
+                Select or drop a photo of a food preparation counter, cutting board, or station to analyze cleanliness and cross-contact vectors.
               </p>
             </div>
           )}

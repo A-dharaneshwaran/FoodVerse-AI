@@ -303,8 +303,8 @@ export function FreshnessDetectorPage() {
           <div style={{ display: 'flex', gap: '10px' }}>
             {!previewUrl ? (
               <button
-                className="btn-spotlight-primary"
-                style={{ flex: 1, justifyContent: 'center' }}
+                className="btn-primary"
+                style={{ flex: 1 }}
                 onClick={() => fileInputRef.current?.click()}
               >
                 <Camera size={15} />
@@ -313,8 +313,8 @@ export function FreshnessDetectorPage() {
             ) : (
               <>
                 <button
-                  className="btn-spotlight-primary"
-                  style={{ flex: 1.5, justifyContent: 'center' }}
+                  className="btn-primary"
+                  style={{ flex: 1.5 }}
                   onClick={handleAnalyze}
                   disabled={isAnalyzing}
                 >
@@ -322,8 +322,8 @@ export function FreshnessDetectorPage() {
                   <span>{isAnalyzing ? 'Inspecting...' : 'Analyze Freshness'}</span>
                 </button>
                 <button
-                  className="btn-header-refresh"
-                  style={{ flex: 1, justifyContent: 'center' }}
+                  className="btn-secondary"
+                  style={{ flex: 1 }}
                   onClick={handleClearImage}
                   disabled={isAnalyzing}
                 >

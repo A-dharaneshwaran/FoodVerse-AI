@@ -252,24 +252,25 @@ export function MealPlannerPage() {
       </div>
 
       {/* Split Planner Layout: Left Preferences Form | Right Structured Meal Plan */}
-      <div style={{ display: 'grid', gridTemplateColumns: '1.05fr 1.35fr', gap: '28px' }}>
+      <div className="meal-planner-split" style={{ display: 'grid', gridTemplateColumns: '1.05fr 1.35fr', gap: '28px' }}>
         {/* Left: Preferences Form */}
         <div style={{
-          backgroundColor: 'var(--bg-surface)',
-          border: '1px solid var(--border-subtle)',
-          borderRadius: '12px',
+          backgroundColor: '#ffffff',
+          border: '1px solid var(--c-border-warm)',
+          borderRadius: '8px',
           padding: '24px',
           display: 'flex',
           flexDirection: 'column',
-          gap: '20px'
+          gap: '20px',
+          boxShadow: 'var(--shadow-subtle)'
         }}>
           <div>
-            <h3 style={{ fontSize: '1.05rem', fontWeight: 600, color: 'var(--text-ivory)', display: 'flex', alignItems: 'center', gap: '8px' }}>
-              <Layers size={18} style={{ color: 'var(--emerald-light)' }} />
+            <h3 style={{ fontSize: '1.15rem', fontFamily: 'var(--font-serif)', fontWeight: 400, color: 'var(--c-espresso)', display: 'flex', alignItems: 'center', gap: '8px' }}>
+              <Layers size={18} style={{ color: 'var(--c-terracotta)' }} />
               <span>Planning Parameters</span>
             </h3>
-            <p style={{ fontSize: '0.78rem', color: 'var(--text-muted)', marginTop: '2px' }}>
-              Configure your schedule, dietary restrictions, and ingredients to synthesize a custom meal agenda.
+            <p style={{ fontSize: '0.8rem', color: 'var(--c-brown-grey)', marginTop: '2px' }}>
+              Configure your schedule, dietary style, and ingredient preferences to synthesize an actionable meal agenda.
             </p>
           </div>
 
@@ -553,13 +554,14 @@ export function MealPlannerPage() {
 
         {/* Right: Structured Meal Plan & Shopping List */}
         <div style={{
-          backgroundColor: 'var(--bg-surface)',
-          border: '1px solid var(--border-subtle)',
-          borderRadius: '12px',
+          backgroundColor: '#ffffff',
+          border: '1px solid var(--c-border-warm)',
+          borderRadius: '8px',
           padding: '24px',
           display: 'flex',
           flexDirection: 'column',
-          gap: '20px'
+          gap: '20px',
+          boxShadow: 'var(--shadow-subtle)'
         }}>
           {generationError && (
             <div className="error-callout" role="alert">
@@ -624,16 +626,19 @@ export function MealPlannerPage() {
               flexDirection: 'column',
               alignItems: 'center',
               justifyContent: 'center',
-              padding: '80px 24px',
+              padding: '60px 24px',
               textAlign: 'center',
-              color: 'var(--text-muted)'
+              color: 'var(--c-brown-grey)',
+              backgroundColor: 'var(--c-oat-soft)',
+              borderRadius: '6px',
+              border: '1px dashed var(--c-border-warm)'
             }}>
-              <CalendarDays size={42} style={{ marginBottom: '14px', strokeWidth: 1.5, opacity: 0.5 }} />
-              <h4 style={{ fontSize: '1rem', color: 'var(--text-ivory)', marginBottom: '6px' }}>
-                No Meal Plan Generated Yet
+              <CalendarDays size={38} style={{ marginBottom: '12px', strokeWidth: 1.5, color: 'var(--c-terracotta)', opacity: 0.85 }} />
+              <h4 style={{ fontSize: '1.05rem', fontFamily: 'var(--font-serif)', color: 'var(--c-espresso)', marginBottom: '6px' }}>
+                Meal Agenda Workspace Ready
               </h4>
-              <p style={{ fontSize: '0.82rem', color: 'var(--text-secondary)', maxWidth: '360px', lineHeight: 1.5 }}>
-                Configure your planning parameters on the left and click Generate to produce an actionable daily schedule with recipes and a consolidated grocery list.
+              <p style={{ fontSize: '0.82rem', color: 'var(--c-brown-grey)', maxWidth: '340px', lineHeight: 1.5 }}>
+                Configure duration, dietary preferences, and allergens on the left to synthesize recipes, portion guidance, and a consolidated shopping list.
               </p>
             </div>
           )}

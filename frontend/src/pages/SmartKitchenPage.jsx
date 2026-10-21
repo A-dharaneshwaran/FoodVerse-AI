@@ -347,7 +347,7 @@ export function SmartKitchenPage() {
       </div>
 
       {/* Overview Metric Bar */}
-      <div style={{
+      <div className="kitchen-overview-grid" style={{
         display: 'grid',
         gridTemplateColumns: 'repeat(4, 1fr)',
         gap: '16px',
@@ -355,76 +355,81 @@ export function SmartKitchenPage() {
       }}>
         <div style={{
           padding: '16px 20px',
-          backgroundColor: 'var(--bg-surface)',
-          border: '1px solid var(--border-subtle)',
-          borderRadius: '10px'
+          backgroundColor: '#ffffff',
+          border: '1px solid var(--c-border-warm)',
+          borderRadius: '8px',
+          boxShadow: 'var(--shadow-subtle)'
         }}>
-          <span style={{ fontSize: '0.72rem', fontFamily: 'var(--font-mono)', color: 'var(--text-muted)', textTransform: 'uppercase' }}>
+          <span style={{ fontSize: '0.72rem', fontFamily: 'var(--font-mono)', color: 'var(--c-brown-grey)', textTransform: 'uppercase' }}>
             Recorded Items
           </span>
-          <div style={{ fontSize: '1.6rem', fontWeight: 600, color: 'var(--text-ivory)', marginTop: '4px' }}>
+          <div style={{ fontSize: '1.6rem', fontWeight: 600, color: 'var(--c-espresso)', marginTop: '4px' }}>
             {overviewStats.totalItems}
           </div>
-          <span style={{ fontSize: '0.74rem', color: 'var(--text-secondary)' }}>in active inventory</span>
+          <span style={{ fontSize: '0.74rem', color: 'var(--c-brown-grey)' }}>in active inventory</span>
         </div>
 
         <div style={{
           padding: '16px 20px',
-          backgroundColor: 'var(--bg-surface)',
-          border: '1px solid var(--border-subtle)',
-          borderRadius: '10px'
+          backgroundColor: '#ffffff',
+          border: '1px solid var(--c-border-warm)',
+          borderRadius: '8px',
+          boxShadow: 'var(--shadow-subtle)'
         }}>
-          <span style={{ fontSize: '0.72rem', fontFamily: 'var(--font-mono)', color: 'var(--citrus-warm)', textTransform: 'uppercase' }}>
+          <span style={{ fontSize: '0.72rem', fontFamily: 'var(--font-mono)', color: 'var(--c-amber)', textTransform: 'uppercase' }}>
             Approaching Dates
           </span>
-          <div style={{ fontSize: '1.6rem', fontWeight: 600, color: 'var(--citrus-warm)', marginTop: '4px' }}>
+          <div style={{ fontSize: '1.6rem', fontWeight: 600, color: 'var(--c-amber)', marginTop: '4px' }}>
             {overviewStats.approachingCount}
           </div>
-          <span style={{ fontSize: '0.74rem', color: 'var(--text-secondary)' }}>due within 3 days</span>
+          <span style={{ fontSize: '0.74rem', color: 'var(--c-brown-grey)' }}>due within 3 days</span>
         </div>
 
         <div style={{
           padding: '16px 20px',
-          backgroundColor: 'var(--bg-surface)',
-          border: '1px solid var(--border-subtle)',
-          borderRadius: '10px'
+          backgroundColor: '#ffffff',
+          border: '1px solid var(--c-border-warm)',
+          borderRadius: '8px',
+          boxShadow: 'var(--shadow-subtle)'
         }}>
-          <span style={{ fontSize: '0.72rem', fontFamily: 'var(--font-mono)', color: 'var(--text-muted)', textTransform: 'uppercase' }}>
+          <span style={{ fontSize: '0.72rem', fontFamily: 'var(--font-mono)', color: 'var(--c-brown-grey)', textTransform: 'uppercase' }}>
             Passed Dates
           </span>
-          <div style={{ fontSize: '1.6rem', fontWeight: 600, color: 'var(--text-ivory)', marginTop: '4px' }}>
+          <div style={{ fontSize: '1.6rem', fontWeight: 600, color: 'var(--c-espresso)', marginTop: '4px' }}>
             {overviewStats.passedCount}
           </div>
-          <span style={{ fontSize: '0.74rem', color: 'var(--text-secondary)' }}>require physical inspection</span>
+          <span style={{ fontSize: '0.74rem', color: 'var(--c-brown-grey)' }}>require physical inspection</span>
         </div>
 
         <div style={{
           padding: '16px 20px',
-          backgroundColor: 'var(--bg-surface)',
-          border: '1px solid var(--border-subtle)',
-          borderRadius: '10px'
+          backgroundColor: '#ffffff',
+          border: '1px solid var(--c-border-warm)',
+          borderRadius: '8px',
+          boxShadow: 'var(--shadow-subtle)'
         }}>
-          <span style={{ fontSize: '0.72rem', fontFamily: 'var(--font-mono)', color: 'var(--emerald-light)', textTransform: 'uppercase' }}>
+          <span style={{ fontSize: '0.72rem', fontFamily: 'var(--font-mono)', color: 'var(--c-sage-dark)', textTransform: 'uppercase' }}>
             Selected for AI
           </span>
-          <div style={{ fontSize: '1.6rem', fontWeight: 600, color: 'var(--emerald-light)', marginTop: '4px' }}>
+          <div style={{ fontSize: '1.6rem', fontWeight: 600, color: 'var(--c-sage-dark)', marginTop: '4px' }}>
             {overviewStats.selectedCount}
           </div>
-          <span style={{ fontSize: '0.74rem', color: 'var(--text-secondary)' }}>ready for culinary recipe synthesis</span>
+          <span style={{ fontSize: '0.74rem', color: 'var(--c-brown-grey)' }}>ready for culinary recipe synthesis</span>
         </div>
       </div>
 
       {/* Main Split Layout: Left Inventory Ledger | Right Culinary Assistant */}
-      <div style={{ display: 'grid', gridTemplateColumns: '1.25fr 1fr', gap: '28px' }}>
+      <div className="smart-kitchen-split" style={{ display: 'grid', gridTemplateColumns: '1.15fr 1fr', gap: '28px' }}>
         {/* Left: Inventory Management */}
         <div style={{
-          backgroundColor: 'var(--bg-surface)',
-          border: '1px solid var(--border-subtle)',
-          borderRadius: '12px',
+          backgroundColor: '#ffffff',
+          border: '1px solid var(--c-border-warm)',
+          borderRadius: '8px',
           padding: '24px',
           display: 'flex',
           flexDirection: 'column',
-          gap: '20px'
+          gap: '20px',
+          boxShadow: 'var(--shadow-subtle)'
         }}>
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '12px' }}>
             <div>
@@ -710,23 +715,24 @@ export function SmartKitchenPage() {
 
         {/* Right: Generative Culinary & Storage Assistant */}
         <div style={{
-          backgroundColor: 'var(--bg-surface)',
-          border: '1px solid var(--border-subtle)',
-          borderRadius: '12px',
+          backgroundColor: '#ffffff',
+          border: '1px solid var(--c-border-warm)',
+          borderRadius: '8px',
           padding: '24px',
           display: 'flex',
           flexDirection: 'column',
-          gap: '20px'
+          gap: '20px',
+          boxShadow: 'var(--shadow-subtle)'
         }}>
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-              <CookingPot size={20} style={{ color: 'var(--citrus-warm)' }} />
-              <h3 style={{ fontSize: '1.1rem', fontWeight: 600, color: 'var(--text-ivory)' }}>
+              <CookingPot size={20} style={{ color: 'var(--c-terracotta)' }} />
+              <h3 style={{ fontSize: '1.15rem', fontFamily: 'var(--font-serif)', fontWeight: 400, color: 'var(--c-espresso)' }}>
                 Culinary & Storage Assistant
               </h3>
             </div>
-            <span style={{ fontSize: '0.7rem', fontFamily: 'var(--font-mono)', color: 'var(--emerald-light)' }}>
-              Recipe & Storage Engine
+            <span style={{ fontSize: '0.7rem', fontFamily: 'var(--font-mono)', color: 'var(--c-sage-dark)' }}>
+              Recipe Engine
             </span>
           </div>
 
